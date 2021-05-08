@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.example.plantillalogin.LoginActivity">
+    tools:context=".LoginActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_login"
@@ -90,7 +90,7 @@
                 android:layout_marginTop="10dp"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/teal_700"
+                android:textColor="@color/colorPrimaryDark"
                 android:layout_gravity="center"
                 android:text="Registrarse" />
 

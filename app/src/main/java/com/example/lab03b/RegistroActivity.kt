@@ -1,4 +1,4 @@
-package com.example.plantillalogin
+package com.example.lab03b;
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
