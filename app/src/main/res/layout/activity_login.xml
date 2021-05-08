@@ -38,17 +38,17 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/til_identificacion"
+                android:id="@+id/til_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp">
                 <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/et_identificacion"
+                    android:id="@+id/et_usuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:imeOptions="actionNext"
-                    android:inputType="number"
-                    android:hint="Identificación"
+                    android:inputType="text"
+                    android:hint="Usuario"
                     android:textColor="@color/colorInputText"
                     android:textColorHint="@color/colorInputHint"
                     />
@@ -61,6 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                app:passwordToggleDrawable="@drawable/ic_selector"
+                app:passwordToggleEnabled="true"
                 >
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_contrasenia"
@@ -73,6 +75,16 @@
                     android:textColorHint="@color/colorInputHint"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:id="@+id/tv_cambiar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_gravity="right"
+                android:text="Cambiar contraseña" />
 
             <Button
                 android:id="@+id/btn_ingresar"
@@ -88,13 +100,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_gravity="center"
                 android:text="Registrarse" />
-
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
