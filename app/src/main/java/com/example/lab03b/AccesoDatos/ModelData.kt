@@ -24,6 +24,20 @@ object ModelData {
         return usuarios
     }
 
+    fun agregarUsuario(usuario:Usuario){
+        usuarios.add(usuario)
+    }
+
+    fun modificarUsuario(usuarioModificado: Usuario):Boolean{
+        for(i in 0..usuarios.size){
+            if(usuarios[i].usuario == usuarioModificado.usuario){
+                usuarios[i] = usuarioModificado
+                return true
+            }
+        }
+        return false
+    }
+
     fun inicializarJobApplications(){
         jobApplications!!.add(JobApplication("Carlos","Sanchez","Central","Central","Alajuela","Alajuela",20101,"Costa Rica","csanchez@gmail.com","+506",888888,"Programador",
             Date()

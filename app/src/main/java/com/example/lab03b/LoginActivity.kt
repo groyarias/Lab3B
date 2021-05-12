@@ -30,8 +30,11 @@ class LoginActivity : AppCompatActivity() {
             var encontrado = false
             for (item in usuarios){
                 if (item.usuario == usuario && item.contrasenia == contrasenia){
-                    Toast.makeText(this@LoginActivity,  "Ingreso correcto",Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(this@LoginActivity,  "Ingreso correcto",Toast.LENGTH_SHORT).show()
                     encontrado = true
+                    intent = Intent(this@LoginActivity,ListActivity::class.java)
+                    startActivity(intent)
+                    finish()
                     break
                 }else if(item.usuario == usuario){
                     Toast.makeText(this@LoginActivity,  "Contraseña incorrecta",Toast.LENGTH_SHORT).show()
