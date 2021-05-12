@@ -6,7 +6,7 @@ import android.graphics.drawable.ColorDrawable
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.swiperecyclerview.R
+import com.example.lab03b.R
 
 abstract class SwipeToEditCallback(context: Context): ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
     private val editIcon = ContextCompat.getDrawable(context, R.drawable.ic_action_edit)

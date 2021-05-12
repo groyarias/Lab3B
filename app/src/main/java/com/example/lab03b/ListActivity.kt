@@ -1,36 +1,31 @@
 package com.example.lab03b
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lab03b.AccesoDatos.ModelData
 import com.example.lab03b.Adaptadores.JobApplicationAdapter
 import com.example.lab03b.LogicaNegocio.JobApplication
-import com.example.swiperecyclerview.LogicaNegocio.JobApplication
-import com.example.swiperecyclerview.R
-import com.example.swiperecyclerview.adapters.JobApplicationAdapter
 import com.example.swiperecyclerview.utils.SwipeToDeleteCallback
 import com.example.swiperecyclerview.utils.SwipeToEditCallback
 import java.util.*
-import kotlin.collections.ArrayList
 
 class ListActivity : AppCompatActivity() {
-
-    var jobApplicationsList: ArrayList<JobApplication>? = null
+    private var model: ModelData? = null
+    private var jobApplicationsList: ArrayList<JobApplication>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        jobApplicationsList = ArrayList()
-        jobApplicationsList!!.add(JobApplication("Carlos","Sanchez","Central","Central","Alajuela","Alajuela",20101,"Costa Rica","csanchez@gmail.com","+506",888888,"Programador",Date()))
-        jobApplicationsList!!.add(JobApplication("Sofia","Brenes","Central","Central","Alajuela","Alajuela",20101,"Costa Rica","sbrenes@gmail.com","+506",888888,"Programador",Date()))
+        model = ModelData
 
+        jobApplicationsList = model!!.obtenerJobApplications()
 
         val rv_job_application_list:RecyclerView = findViewById(R.id.rv_job_application_list)
         val tv_no_records_available:TextView = findViewById(R.id.tv_no_records_available)

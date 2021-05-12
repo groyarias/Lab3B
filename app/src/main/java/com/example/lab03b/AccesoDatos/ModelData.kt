@@ -1,13 +1,17 @@
 package com.example.lab03b.AccesoDatos
 
+import com.example.lab03b.LogicaNegocio.JobApplication
 import com.example.lab03b.LogicaNegocio.Usuario
+import java.util.*
+import kotlin.collections.ArrayList
 
 object ModelData {
-
-    private val usuarios:MutableList<Usuario> = mutableListOf<Usuario>()
+    private val usuarios:ArrayList<Usuario> = arrayListOf<Usuario>()
+    private val jobApplications:ArrayList<JobApplication> = arrayListOf<JobApplication>()
 
     init {
         inicializarUsuarios()
+        inicializarJobApplications()
     }
 
     fun inicializarUsuarios(){
@@ -16,8 +20,22 @@ object ModelData {
         usuarios.add(Usuario("@roy","admin"))
     }
 
-    fun obtenerUsuarios():MutableList<Usuario>{
+    fun obtenerUsuarios():ArrayList<Usuario>{
         return usuarios
+    }
+
+    fun inicializarJobApplications(){
+        jobApplications!!.add(JobApplication("Carlos","Sanchez","Central","Central","Alajuela","Alajuela",20101,"Costa Rica","csanchez@gmail.com","+506",888888,"Programador",
+            Date()
+        ))
+        jobApplications!!.add(JobApplication("Sofia","Brenes","Central","Central","Alajuela","Alajuela",20101,"Costa Rica","sbrenes@gmail.com","+506",888888,"Programador",
+            Date()
+        ))
+
+    }
+
+    fun obtenerJobApplications():ArrayList<JobApplication>{
+        return jobApplications
     }
 
 }
