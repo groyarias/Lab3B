@@ -1,10 +1,12 @@
 package com.example.lab03b
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,52 +15,57 @@ import com.example.lab03b.Adaptadores.JobApplicationAdapter
 import com.example.lab03b.LogicaNegocio.JobApplication
 import com.example.swiperecyclerview.utils.SwipeToDeleteCallback
 import com.example.swiperecyclerview.utils.SwipeToEditCallback
-import java.util.*
+import java.util.ArrayList
 
-class ListActivity : AppCompatActivity() {
+
+class FragmentList : Fragment() {
     private var model: ModelData? = null
     private var jobApplicationsList: ArrayList<JobApplication>? = null
+    private var rv_job_application_list:RecyclerView? = null
+    private var tv_no_records_available: TextView? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_list)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         model = ModelData
 
         jobApplicationsList = model!!.obtenerJobApplications()
 
-        val rv_job_application_list:RecyclerView = findViewById(R.id.rv_job_application_list)
-        val tv_no_records_available:TextView = findViewById(R.id.tv_no_records_available)
+
+        var view: View? = null
+        view = inflater.inflate(R.layout.fragment_list, container, false)
+        rv_job_application_list = view.findViewById(R.id.rv_job_application_list)
+        tv_no_records_available = view.findViewById(R.id.tv_no_records_available)
+
+
         if (jobApplicationsList!!.size > 0) {
 
-            rv_job_application_list.visibility = View.VISIBLE
-            tv_no_records_available.visibility = View.GONE
+            rv_job_application_list?.visibility = View.VISIBLE
+            tv_no_records_available?.visibility = View.GONE
             setupListApplicationRecyclerView(jobApplicationsList!!)
 
         } else {
-            rv_job_application_list.visibility = View.GONE
-            tv_no_records_available.visibility = View.VISIBLE
+            rv_job_application_list?.visibility = View.GONE
+            tv_no_records_available?.visibility = View.VISIBLE
         }
 
-
-
-
+        return view
     }
-
 
     private fun setupListApplicationRecyclerView(jobApplicationsList: ArrayList<JobApplication>) {
 
-        val rv_job_application_list:RecyclerView = findViewById(R.id.rv_job_application_list)
-        rv_job_application_list.layoutManager = LinearLayoutManager(this)
-        rv_job_application_list.setHasFixedSize(true)
+        rv_job_application_list?.layoutManager = LinearLayoutManager(requireContext())
+        rv_job_application_list?.setHasFixedSize(true)
 
-        val jobAppAdapter: JobApplicationAdapter = JobApplicationAdapter(this, jobApplicationsList)
-        rv_job_application_list.adapter = jobAppAdapter
+        val jobAppAdapter: JobApplicationAdapter = JobApplicationAdapter(requireContext(), jobApplicationsList)
+        rv_job_application_list?.adapter = jobAppAdapter
 
         jobAppAdapter.setOnClickListener(object : JobApplicationAdapter.OnClickListener{
             override fun onClick(position: Int, model: JobApplication) {
 
-                Toast.makeText(this@ListActivity, "${model.firstName}",Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "${model.firstName}", Toast.LENGTH_SHORT)
                 /*
                 val intent = Intent(this@MainActivity, HappyPlaceDetailActivity::class.java)
                 intent.putExtra(EXTRA_PLACE_DETAILS, model) // Passing the complete serializable data class to the detail activity using intent.
@@ -69,11 +76,11 @@ class ListActivity : AppCompatActivity() {
         })
 
 
-        val editSwipeHandler = object : SwipeToEditCallback(this) {
+        val editSwipeHandler = object : SwipeToEditCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                val adapter = rv_job_application_list.adapter as JobApplicationAdapter
+                val adapter = rv_job_application_list?.adapter as JobApplicationAdapter
                 adapter.notifyEditItem(
-                    this@ListActivity,
+                    requireActivity(),
                     viewHolder.adapterPosition,
                     ADD_PLACE_ACTIVITY_REQUEST_CODE
                 )
@@ -84,10 +91,10 @@ class ListActivity : AppCompatActivity() {
 
 
 
-        val deleteSwipeHandler = object : SwipeToDeleteCallback(this) {
+        val deleteSwipeHandler = object : SwipeToDeleteCallback(requireContext()) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 
-                val adapter = rv_job_application_list.adapter as JobApplicationAdapter
+                val adapter = rv_job_application_list?.adapter as JobApplicationAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
 
             }

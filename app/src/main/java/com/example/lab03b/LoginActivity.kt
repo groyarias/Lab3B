@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
                 if (item.usuario == usuario && item.contrasenia == contrasenia){
                     //Toast.makeText(this@LoginActivity,  "Ingreso correcto",Toast.LENGTH_SHORT).show()
                     encontrado = true
-                    intent = Intent(this@LoginActivity,ListActivity::class.java)
+                    intent = Intent(this@LoginActivity,MainActivity::class.java)
                     startActivity(intent)
                     finish()
                     break

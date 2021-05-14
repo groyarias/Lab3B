@@ -1,6 +1,7 @@
 package com.example.lab03b
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.job->{
                 setToolbartitle("Job Application")
                 changeFragment(JobApplication())
+            }
+            R.id.list->{
+                setToolbartitle("List Job Application")
+                changeFragment(FragmentList())
             }
         }
         return true
