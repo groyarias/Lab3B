@@ -8,18 +8,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".CambiarContraseniaActivity"></activity>
-        <activity android:name=".LoginActivity">
+        android:theme="@style/Theme.Lab03B">
+        <!--com.example.plantillalogin.LoginActivity -->
+        <activity android:name=".MainActivity" android:theme="@style/Theme.Lab03B.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistroActivity"></activity>
-        <activity android:name=".ListActivity">
-        </activity>
+        <activity android:name="com.example.plantillalogin.RegistroActivity"></activity>
     </application>
-
 </manifest>
