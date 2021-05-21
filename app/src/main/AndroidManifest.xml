@@ -9,16 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab03B">
-        <!--com.example.plantillalogin.LoginActivity -->
-        <activity android:name=".LoginActivity" android:theme="@style/Theme.Lab03B.NoActionBar">
+        <activity android:name=".ActivityJobApplication"></activity>
+        <!-- com.example.plantillalogin.LoginActivity -->
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.Lab03B.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.lab03b.RegistroActivity" android:theme="@style/Theme.Lab03B.NoActionBar"></activity>
-        <activity android:name="com.example.lab03b.CambiarContraseniaActivity" android:theme="@style/Theme.Lab03B.NoActionBar"></activity>
-        <activity android:name="com.example.lab03b.ListActivity" android:theme="@style/Theme.Lab03B.NoActionBar"></activity>
-        <activity android:name="com.example.lab03b.MainActivity" android:theme="@style/Theme.Lab03B.NoActionBar"></activity>
+        <activity
+            android:name=".RegistroActivity"
+            android:theme="@style/Theme.Lab03B.NoActionBar" />
+        <activity
+            android:name=".CambiarContraseniaActivity"
+            android:theme="@style/Theme.Lab03B.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Lab03B.NoActionBar" />
     </application>
+
 </manifest>

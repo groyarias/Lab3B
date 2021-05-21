@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class JobApplication : Fragment() {
+class FragmentJobApplication : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

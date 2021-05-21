@@ -1,5 +1,6 @@
 package com.example.lab03b.LogicaNegocio
 
+import java.io.Serializable
 import java.util.*
 
 class JobApplication(
@@ -16,7 +17,7 @@ class JobApplication(
     phoneNumber:Int,
     applyingPosition:String,
     startDate:Date
-) {
+):Serializable {
      var firstName:String = ""
      var lastName:String = ""
      var mainStreetAddress:String = ""
