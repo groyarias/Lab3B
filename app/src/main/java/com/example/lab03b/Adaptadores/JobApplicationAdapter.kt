@@ -59,6 +59,7 @@ open class JobApplicationAdapter(
 
     fun removeAt(position: Int) {
         list.removeAt(position)
+
         notifyItemRemoved(position)
     }
 
