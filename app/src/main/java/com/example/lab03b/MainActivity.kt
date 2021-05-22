@@ -1,11 +1,8 @@
 package com.example.lab03b
 
-import android.app.Activity
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
@@ -42,10 +39,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 changeFragment(Home())
 
             }
-            R.id.job->{
-                setToolbartitle("Job Application")
-                changeFragment(JobApplication())
-            }
             R.id.list->{
                 setToolbartitle("List Job Application")
                 changeFragment(FragmentList())
@@ -64,6 +57,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val fragment=supportFragmentManager.beginTransaction()
         fragment.replace(R.id.fragment_container,frag).commit()
     }
+
+
 
 
 }

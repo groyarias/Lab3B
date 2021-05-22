@@ -2,10 +2,12 @@ package com.example.lab03b.Adaptadores
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lab03b.ActivityJobApplication
 import com.example.lab03b.LogicaNegocio.JobApplication
 import com.example.lab03b.R
 import kotlinx.android.synthetic.main.item_job_application.view.*
@@ -45,14 +47,14 @@ open class JobApplicationAdapter(
     }
 
     fun notifyEditItem(activity: Activity, position: Int, requestCode: Int) {
-        /*val intent = Intent(context, AddJobApplicationActivity::class.java)
-        intent.putExtra(ListActivity.EXTRA_PLACE_DETAILS, list[position])
+        val intent = Intent(context, ActivityJobApplication::class.java)
+        intent.putExtra("extra_place_details", list[position])
         activity.startActivityForResult(
             intent,
             requestCode
         )
 
-        notifyItemChanged(position) */
+        notifyItemChanged(position)
     }
 
     fun removeAt(position: Int) {
