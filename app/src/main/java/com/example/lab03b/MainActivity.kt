@@ -1,5 +1,6 @@
 package com.example.lab03b
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -43,6 +44,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 setToolbartitle("List Job Application")
                 changeFragment(FragmentList())
             }
+            R.id.logout->{
+                var intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
         return true
     }
@@ -57,6 +63,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val fragment=supportFragmentManager.beginTransaction()
         fragment.replace(R.id.fragment_container,frag).commit()
     }
+
 
 
 
