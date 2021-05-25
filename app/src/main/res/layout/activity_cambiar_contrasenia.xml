@@ -103,7 +103,7 @@
             android:layout_margin="16dp"
             android:src="@drawable/ic_edit_user"
             android:tint="@android:color/background_light"
-            app:backgroundTint="@color/colorPrimary" />
+            app:backgroundTint="#C9ED9F" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

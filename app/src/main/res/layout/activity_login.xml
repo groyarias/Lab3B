@@ -82,7 +82,7 @@
                 android:layout_marginTop="10dp"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:layout_gravity="right"
                 android:text="Cambiar contraseña" />
 
@@ -102,7 +102,7 @@
                 android:layout_marginTop="10dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:text="Registrarse" />
         </LinearLayout>

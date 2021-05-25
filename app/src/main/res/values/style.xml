@@ -8,8 +8,8 @@
     </style>
 
     <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">#BDE68C</item>
+        <item name="colorPrimaryDark">#BDE68C</item>
+        <item name="colorAccent">#BDE68C</item>
     </style>
 </resources>
